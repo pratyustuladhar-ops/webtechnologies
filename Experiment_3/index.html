@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My personal website</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        header {
+            background-color: #111827;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #3b82f6;
+        }
+
+        main {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .home-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .home-text {
+            flex: 1;
+        }
+
+        .home-image img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>My First Website</h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="projects.html">PROJECTS</a>
+            <a href="contacts.html">CONTACT</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="home-content">
+                <div class="home-text">
+                    <h2>Home</h2>
+                    <p>Hello! My name is MR.APPLE.</p>
+                    <p>I am a Computer Science Engineering student.</p>
+                    <p>This website is created using basic HTML.</p>
+                </div>
+
+                <div class="home-image">
+                    <img src="https://images.pexels.com/photos/206959/pexels-photo-206959.jpeg?cs=srgb&dl=pexels-pixabay-206959.jpg&fm=jpg" alt="Profile Picture">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>My Goals</h3>
+            <ul>
+                <li>Become a Web Developer</li>
+                <li>Learn Advanced Python</li>
+                <li>Build Real Projects</li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>
