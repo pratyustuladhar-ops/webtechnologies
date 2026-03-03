@@ -1,45 +1,39 @@
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
-let interval = null;
+let students = [];
 
-function updateDisplay() {
-    let h = hours < 10 ? "0" + hours : hours;
-    let m = minutes < 10 ? "0" + minutes : minutes;
-    let s = seconds < 10 ? "0" + seconds : seconds;
+// Save form data
+document.getElementById("studentForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-    document.getElementById("display").innerText = h + ":" + m + ":" + s;
-}
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let course = document.getElementById("course").value;
 
-function startTimer() {
-    if (interval !== null) return; // prevents multiple intervals
+    students.push({ name, email, course });
 
-    interval = setInterval(() => {
-        seconds++;
+    alert("Data Saved!");
 
-        if (seconds === 60) {
-            seconds = 0;
-            minutes++;
-        }
+    document.getElementById("studentForm").reset();
+});
 
-        if (minutes === 60) {
-            minutes = 0;
-            hours++;
-        }
+// Download CSV
+function downloadCSV() {
 
-        updateDisplay();
-    }, 1000);
-}
+    if (students.length === 0) {
+        alert("No data to download!");
+        return;
+    }
 
-function stopTimer() {
-    clearInterval(interval);
-    interval = null;
-}
+    let csv = "Name,Email,Course\n";
 
-function resetTimer() {
-    stopTimer();
-    seconds = 0;
-    minutes = 0;
-    hours = 0;
-    updateDisplay();
+    students.forEach(function(student) {
+        csv += student.name + "," + student.email + "," + student.course + "\n";
+    });
+
+    let blob = new Blob([csv], { type: "text/csv" });
+    let url = window.URL.createObjectURL(blob);
+
+    let a = document.createElement("a");
+    a.setAttribute("href", url);
+    a.setAttribute("download", "students.csv");
+    a.click();
 }

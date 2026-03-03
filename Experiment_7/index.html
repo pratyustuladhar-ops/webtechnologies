@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Timer</title>
+    <title>Student Form - Exp 7</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>Timer</h1>
-        <div id="display">00:00:00</div>
+        <h2>Student Registration Form</h2>
 
-        <div class="buttons">
-            <button onclick="startTimer()">Start</button>
-            <button onclick="stopTimer()">Stop</button>
-            <button onclick="resetTimer()">Reset</button>
-        </div>
+        <form id="studentForm">
+            <input type="text" id="name" placeholder="Enter Name" required>
+            <input type="email" id="email" placeholder="Enter Email" required>
+            <input type="text" id="course" placeholder="Enter Course" required>
+
+            <button type="submit">Save Data</button>
+        </form>
+
+        <button onclick="downloadCSV()">Download CSV</button>
     </div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
