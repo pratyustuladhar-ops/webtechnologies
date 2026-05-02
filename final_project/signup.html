@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Brew &amp; Ritual | Join the Ritual</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&amp;family=Epilogue:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#a9908a",
+                        "on-secondary-fixed": "#26190e",
+                        "surface-container-high": "#322726",
+                        "surface-container-low": "#231918",
+                        "primary-container": "#c58940",
+                        "on-tertiary-fixed-variant": "#56423d",
+                        "inverse-surface": "#f1dedc",
+                        "primary": "#fdb96b",
+                        "on-primary-container": "#442700",
+                        "on-error": "#690005",
+                        "surface-container": "#271d1c",
+                        "primary-fixed-dim": "#fdb96b",
+                        "outline": "#9e8e7f",
+                        "surface-dim": "#1a1110",
+                        "surface-container-lowest": "#150c0b",
+                        "secondary-container": "#574639",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#673d00",
+                        "surface-tint": "#fdb96b",
+                        "on-secondary": "#3c2d22",
+                        "secondary-fixed-dim": "#dac2b1",
+                        "on-tertiary": "#3e2c28",
+                        "on-surface-variant": "#d5c3b3",
+                        "surface-variant": "#3d3231",
+                        "on-secondary-container": "#cbb4a3",
+                        "tertiary-fixed": "#fadcd5",
+                        "background": "#1a1110",
+                        "on-primary-fixed": "#2b1700",
+                        "on-background": "#f1dedc",
+                        "surface-bright": "#423635",
+                        "tertiary": "#ddc0ba",
+                        "on-primary": "#482900",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#392e2d",
+                        "secondary": "#dac2b1",
+                        "tertiary-fixed-dim": "#ddc0ba",
+                        "inverse-primary": "#85530b",
+                        "secondary-fixed": "#f7decc",
+                        "on-tertiary-fixed": "#271814",
+                        "on-surface": "#f1dedc",
+                        "primary-fixed": "#ffddba",
+                        "error": "#ffb4ab",
+                        "on-tertiary-container": "#3c2a26",
+                        "surface-container-highest": "#3d3231",
+                        "outline-variant": "#514538",
+                        "surface": "#1a1110",
+                        "on-secondary-fixed-variant": "#544337"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "margin-edge": "40px",
+                        "stack-lg": "48px",
+                        "stack-sm": "12px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Epilogue"],
+                        "headline-md": ["Noto Serif"],
+                        "body-lg": ["Epilogue"],
+                        "body-md": ["Epilogue"],
+                        "headline-lg": ["Noto Serif"],
+                        "headline-xl": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(35, 25, 24, 0.7);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(158, 142, 127, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+        }
+        .inner-glow {
+            box-shadow: inset 0 1px 1px rgba(253, 185, 107, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30">
+    <main class="min-h-screen flex flex-col md:flex-row overflow-hidden">
+        <!-- Left Column: Atmospheric Image & Branding -->
+        <section class="relative w-full md:w-1/2 lg:w-[60%] min-h-[409px] md:min-h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img alt="Cinematic coffee atmosphere" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKKETGF2cHl8vvJOOMKB7vBwuU-1de-eFLDkfKH0O1zB14R9kzIaaQyIqDbB22r-fzeweLXdjkbUEwGuc8fgimXqWG8xvS-9i08YgushU_oXou9X_0hDPNN3zW3FTlYJgX7-s7ecJu7HncIlKZeS_Ic1ziK_s3m1jZpPJdzvyCHJehODxp9Q6VGBFgjF6vc8DbZU2ZpfAaoURmza-jE-Zhifl3Usq-zVdBwUOtjxTAfuJ4pzgZk8NqPqcKHZouCOm1MDVAqLtj1ao"/>
+                <div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent md:bg-gradient-to-l md:from-background"></div>
+            </div>
+            <div class="relative z-10 p-margin-edge text-center md:text-left max-w-xl">
+                <div class="mb-stack-lg">
+                    <span class="text-primary font-label-caps tracking-widest mb-4 block">ESTABLISHED MMXXIV</span>
+                    <a href="index.html" class="font-headline-xl text-on-surface mb-stack-sm leading-none block hover:text-primary-container transition-colors">Brew &amp; Ritual</a>
+                    <p class="font-body-lg text-on-surface-variant max-w-md">Elevate your daily habit into a sensory journey. Welcome to the inner circle of coffee mastery.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Column: Signup Form -->
+        <section class="w-full md:w-1/2 lg:w-[40%] flex items-center justify-center p-6 md:p-margin-edge z-20">
+            <div class="glass-panel w-full max-w-md rounded-xl p-8 md:p-10 flex flex-col gap-8 inner-glow">
+                <header class="text-center md:text-left">
+                    <h2 class="font-headline-lg text-on-surface mb-2">Start Your Journey</h2>
+                    <p class="font-body-md text-on-surface-variant">Create an account to begin your personal ritual.</p>
+                </header>
+
+                <!-- Role Selection -->
+                <div class="flex gap-4">
+                    <button type="button" id="role-customer" class="flex-1 py-3 px-4 rounded-lg border-2 border-primary font-body-md font-semibold text-on-surface bg-primary/10 transition-all role-btn active-role" data-role="customer">
+                        <span class="material-symbols-outlined text-[20px] align-middle mr-2">coffee</span>Customer
+                    </button>
+                    <button type="button" id="role-waiter" class="flex-1 py-3 px-4 rounded-lg border-2 border-outline-variant font-body-md font-semibold text-outline hover:border-primary hover:text-on-surface transition-all role-btn" data-role="waiter">
+                        <span class="material-symbols-outlined text-[20px] align-middle mr-2">room_service</span>Staff
+                    </button>
+                </div>
+                <input type="hidden" id="role-input" value="customer">
+                
+                <form id="auth-signup-form" class="flex flex-col gap-6">
+                    <!-- Feedback Messages -->
+                    <div id="signup-error" class="hidden font-body-md text-[14px] text-error bg-error-container/20 border border-error/50 rounded-lg p-3"></div>
+                    <div id="signup-success" class="hidden font-body-md text-[14px] text-success bg-success/10 border border-success/50 rounded-lg p-3"></div>
+
+                    <!-- Full Name -->
+                    <div class="flex flex-col gap-2">
+                        <label class="font-label-caps text-outline text-[10px]" for="full-name">FULL NAME</label>
+                        <div class="relative group">
+                            <input id="full-name" type="text" class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline/40 focus:outline-none focus:border-primary transition-colors font-body-md" placeholder="Elias Thorne" required/>
+                            <div class="absolute right-4 top-1/2 -translate-y-1/2 text-outline/50 group-focus-within:text-primary transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">person</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Email Address -->
+                    <div class="flex flex-col gap-2">
+                        <label class="font-label-caps text-outline text-[10px]" for="email">EMAIL ADDRESS</label>
+                        <div class="relative group">
+                            <input id="email" type="email" class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline/40 focus:outline-none focus:border-primary transition-colors font-body-md" placeholder="elias@ritual.com" required/>
+                            <div class="absolute right-4 top-1/2 -translate-y-1/2 text-outline/50 group-focus-within:text-primary transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">mail</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Password -->
+                    <div class="flex flex-col gap-2">
+                        <label class="font-label-caps text-outline text-[10px]" for="password">PASSWORD</label>
+                        <div class="relative group">
+                            <input id="password" type="password" class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3.5 text-on-surface placeholder:text-outline/40 focus:outline-none focus:border-primary transition-colors font-body-md" placeholder="••••••••" required/>
+                            <div class="absolute right-4 top-1/2 -translate-y-1/2 text-outline/50 group-focus-within:text-primary transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">lock</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Terms Checkbox -->
+                    <div class="flex items-start gap-3">
+                        <div class="relative flex items-center h-6">
+                            <input id="terms" type="checkbox" class="w-5 h-5 rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-primary focus:ring-offset-surface-dim transition-all cursor-pointer" required/>
+                        </div>
+                        <label class="text-[14px] text-on-surface-variant font-body-md leading-tight cursor-pointer" for="terms">
+                            I agree to the <a class="text-primary hover:underline transition-all" href="#">Terms of Service</a> and <a class="text-primary hover:underline transition-all" href="#">Privacy Policy</a>.
+                        </label>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <button id="signup-btn" type="submit" class="w-full bg-primary-container hover:bg-primary text-on-primary-container font-label-caps py-4 rounded-full transition-all duration-300 transform active:scale-[0.98] shadow-lg shadow-primary/10 flex items-center justify-center gap-2 group">
+                        Join the Ritual
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </form>
+                
+                <footer class="flex flex-col gap-4 text-center">
+                    <p class="font-body-md text-on-surface-variant">
+                        Already part of the ritual? 
+                        <a class="text-primary font-semibold hover:text-primary-fixed transition-colors underline underline-offset-4 decoration-primary/30 hover:decoration-primary" href="login.html">Sign In</a>
+                    </p>
+                    <div class="flex items-center gap-4 px-8 mt-4">
+                        <div class="h-px w-full bg-outline-variant/30"></div>
+                        <span class="font-label-caps text-[10px] text-outline shrink-0">SOCIAL JOIN</span>
+                        <div class="h-px w-full bg-outline-variant/30"></div>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high border border-outline-variant hover:bg-surface-bright transition-colors text-on-surface">
+                            <span class="material-symbols-outlined text-[20px]">google</span>
+                        </button>
+                        <button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high border border-outline-variant hover:bg-surface-bright transition-colors text-on-surface">
+                            <span class="material-symbols-outlined text-[20px]">ios</span>
+                        </button>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Background Steam Effect Layer (Pure CSS Gradient) -->
+    <div class="fixed inset-0 pointer-events-none z-0 opacity-20">
+        <div class="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-gradient-to-br from-tertiary/20 to-transparent blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-gradient-to-tr from-primary/10 to-transparent blur-[100px] rounded-full"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const signupForm = document.getElementById('auth-signup-form');
+            const errorEl = document.getElementById('signup-error');
+            const successEl = document.getElementById('signup-success');
+            const btn = document.getElementById('signup-btn');
+            const originalBtnText = btn.innerHTML;
+            const roleInput = document.getElementById('role-input');
+            const roleBtns = document.querySelectorAll('.role-btn');
+
+            // Check URL parameter for role
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlRole = urlParams.get('role');
+            if (urlRole && ['customer', 'waiter'].includes(urlRole)) {
+                roleInput.value = urlRole;
+                // Highlight the corresponding button
+                roleBtns.forEach(btn => {
+                    if (btn.getAttribute('data-role') === urlRole) {
+                        btn.click();
+                    }
+                });
+            }
+
+            // Role selection
+            roleBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    roleBtns.forEach(b => {
+                        b.classList.remove('active-role', 'border-primary', 'bg-primary/10');
+                        b.classList.add('border-outline-variant');
+                    });
+                    btn.classList.add('active-role', 'border-primary', 'bg-primary/10');
+                    btn.classList.remove('border-outline-variant');
+                    roleInput.value = btn.getAttribute('data-role');
+                });
+            });
+
+            signupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                errorEl.classList.add('hidden');
+                successEl.classList.add('hidden');
+                
+                const fullName = document.getElementById('full-name').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const role = roleInput.value;
+
+                btn.innerHTML = 'Joining...';
+                btn.disabled = true;
+
+                fetch('api/register.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ full_name: fullName, email: email, password: password, role: role })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        signupForm.reset();
+                        successEl.textContent = `Account created successfully! You can now sign in as ${role === 'waiter' ? 'staff' : 'customer'}.`;
+                        successEl.classList.remove('hidden');
+                        btn.innerHTML = originalBtnText;
+                        btn.disabled = false;
+                        setTimeout(() => {
+                            window.location.href = 'login.html';
+                        }, 2000);
+                    } else {
+                        errorEl.textContent = data.error || 'Registration failed.';
+                        errorEl.classList.remove('hidden');
+                        btn.innerHTML = originalBtnText;
+                        btn.disabled = false;
+                    }
+                })
+                .catch(err => {
+                    errorEl.textContent = 'A network error occurred. Please try again.';
+                    errorEl.classList.remove('hidden');
+                    btn.innerHTML = originalBtnText;
+                    btn.disabled = false;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

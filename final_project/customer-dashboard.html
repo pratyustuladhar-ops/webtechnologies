@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard | Brew & Ritual</title>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container navbar">
+            <a href="index.html" class="brand">Brew & Ritual</a>
+            <div class="nav-links">
+                <a href="customer-dashboard.html" class="active">Menu</a>
+                <a href="#" id="logout-btn" style="color: var(--error);">Logout</a>
+            </div>
+            <div class="nav-actions">
+                <button id="cart-toggle" class="icon-btn">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <span id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" style="padding: 40px 24px;">
+        <div class="container">
+            <h1 id="welcome-msg">Welcome, Coffee Lover</h1>
+            <p>Add items to your tray, enter your table number, and enjoy seamless service.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Order History Section (Mini) -->
+        <div id="my-orders-section" style="margin-bottom: 40px; display: none;">
+            <h2 class="section-title">Active Orders</h2>
+            <div id="my-orders-container" style="display: flex; gap: 16px; overflow-x: auto; padding-bottom: 16px;">
+                <!-- Populated via JS -->
+            </div>
+        </div>
+
+        <h2 class="section-title">The Menu</h2>
+        <div id="menu-grid" class="menu-grid">
+            <div class="glass-panel" style="text-align: center;">Loading menu...</div>
+        </div>
+    </main>
+
+    <!-- Cart Modal -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-header">
+            <h3>Your Tray</h3>
+            <button id="cart-close" class="icon-btn"><span class="material-symbols-outlined">close</span></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Dynamically populated -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <div class="table-input-group">
+                <label for="table-no">Table Number:</label>
+                <input type="number" id="table-no" placeholder="e.g. 12" min="1" max="50">
+            </div>
+            <button id="place-order-btn" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 16px;">
+                Place Order <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/customer-dashboard.js"></script>
+</body>
+</html>

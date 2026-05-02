@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status | Brew & Ritual</title>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container navbar">
+            <a href="index.html" class="brand">Brew & Ritual</a>
+            <div class="nav-links">
+                <a href="customer-dashboard.html">Menu</a>
+                <a href="login.html" id="nav-login-btn">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-bottom: 80px;">
+        <div id="status-container" class="tracker-container">
+            <div style="text-align:center; padding: 40px; color:var(--outline);">
+                <span class="material-symbols-outlined" style="font-size: 48px; animation: spin 2s linear infinite;">sync</span>
+                <p>Fetching your order...</p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+    <script src="js/status.js"></script>
+</body>
+</html>

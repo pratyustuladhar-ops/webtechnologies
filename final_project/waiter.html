@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waitstaff | Brew & Ritual</title>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container navbar">
+            <a href="index.html" class="brand">Brew & Ritual</a>
+            <div class="nav-links">
+                <a href="index.html">Menu</a>
+                <a href="waiter.html" class="active">Waiter Dashboard</a>
+                <a href="#" id="logout-btn" style="color: var(--error);">Logout</a>
+            </div>
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size:12px; color:var(--outline); text-transform:uppercase; letter-spacing:0.1em;">Live Sync Active</span>
+                <span style="width:12px; height:12px; background:var(--success); border-radius:50%; display:inline-block; box-shadow:0 0 10px var(--success);"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="max-width: 1400px; padding-top: 40px; margin-bottom: 60px;">
+        <h2 class="section-title">Active Rituals Service</h2>
+        
+        <div class="kanban-board">
+            <div class="kanban-col">
+                <div class="kanban-header">
+                    <span><span class="material-symbols-outlined" style="vertical-align: middle; margin-right: 8px;">hourglass_empty</span> Pending</span>
+                    <span id="count-pending" style="font-size:14px; background:rgba(255,255,255,0.1); padding:4px 12px; border-radius:12px;">0</span>
+                </div>
+                <div id="col-pending" style="display: flex; flex-direction: column; gap: 16px;"></div>
+            </div>
+            
+            <div class="kanban-col">
+                <div class="kanban-header" style="color: var(--primary-container); border-color: rgba(197, 137, 64, 0.4);">
+                    <span><span class="material-symbols-outlined" style="vertical-align: middle; margin-right: 8px;">local_cafe</span> Preparing</span>
+                    <span id="count-preparing" style="font-size:14px; background:rgba(197, 137, 64, 0.2); padding:4px 12px; border-radius:12px;">0</span>
+                </div>
+                <div id="col-preparing" style="display: flex; flex-direction: column; gap: 16px;"></div>
+            </div>
+            
+            <div class="kanban-col">
+                <div class="kanban-header" style="color: var(--success); border-color: rgba(129, 201, 149, 0.4);">
+                    <span><span class="material-symbols-outlined" style="vertical-align: middle; margin-right: 8px;">room_service</span> Ready</span>
+                    <span id="count-ready" style="font-size:14px; background:rgba(129, 201, 149, 0.2); padding:4px 12px; border-radius:12px;">0</span>
+                </div>
+                <div id="col-ready" style="display: flex; flex-direction: column; gap: 16px;"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/waiter.js"></script>
+</body>
+</html>
