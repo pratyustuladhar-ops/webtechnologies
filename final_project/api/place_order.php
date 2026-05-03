@@ -12,6 +12,20 @@ if (!isset($input['table_number']) || empty($input['items'])) {
 }
 
 $tableNumber = (int)$input['table_number'];
+// Limit table number to 10 seats
+if ($tableNumber < 1 || $tableNumber > 10) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Table number must be between 1 and 10']);
+    exit;
+}
+// Ensure table is not already occupied by an active (non-Served) order
+$stmt = $pdo->prepare("SELECT id FROM orders WHERE table_number = ? AND status != 'Served'");
+$stmt->execute([$tableNumber]);
+if ($stmt->fetch()) {
+    http_response_code(409);
+    echo json_encode(['error' => 'Table is already occupied']);
+    exit;
+}
 $items = $input['items'];
 
 $customerId = null;
