@@ -1,26 +1,34 @@
 let operation = "";
 
-function appender(numoper) {
-    operation += numoper;
+function appender(value) {
+    if (operation === "0" && value !== ".") {
+        operation = value;
+    } else {
+        operation += value;
+    }
     display();
 }
 
 function display() {
-    document.getElementById('result').innerHTML = operation;
+    document.getElementById('result').innerText = operation || '0';
 }
 
-function resclear() {
+function clearAll() {
     operation = "";
-    document.getElementById('result').innerHTML = "";
+    display();
+}
+
+function clearEntry() {
+    operation = operation.slice(0, -1);
+    display();
 }
 
 async function calculate() {
     if (!operation) return;
-    
-    // Check for valid current operation visually before sending.
+
     const resultElement = document.getElementById('result');
-    resultElement.innerHTML = "..."; 
-    
+    resultElement.innerText = "...";
+
     try {
         let formData = new FormData();
         formData.append('expression', operation);
@@ -30,17 +38,15 @@ async function calculate() {
             method: 'POST',
             body: formData
         });
-        
+
         let responseText = await response.text();
         console.log("Raw Server Response:", responseText);
 
         let data;
         try {
-            // First try normal parse
             data = JSON.parse(responseText);
         } catch (parseError) {
             console.error("Standard JSON parse failed, attempting extraction...");
-            // Free hosts often inject HTML. Try to extract just the JSON part
             let match = responseText.match(/\{.*\}/s);
             if (match) {
                 data = JSON.parse(match[0]);
@@ -48,23 +54,22 @@ async function calculate() {
                 throw new Error("Invalid response format from server: " + responseText);
             }
         }
-        
+
         if (data.status === 'success') {
-            resultElement.innerHTML = data.result;
+            resultElement.innerText = data.result;
             operation = data.result.toString();
             updateHistory(data.history);
         } else {
             console.error("Server returned error:", data.message);
-            resultElement.innerHTML = "Error: " + data.message;
+            resultElement.innerText = "Error";
             operation = "";
         }
     } catch (e) {
         console.error("Network or Parsing Error:", e);
-        // If it's a TypeError it might be because they are using file:///
         if (window.location.protocol === 'file:') {
-            resultElement.innerHTML = "Local File Error (Use XAMPP)";
+            resultElement.innerText = "Local File Error";
         } else {
-            resultElement.innerHTML = "Error (See Console)";
+            resultElement.innerText = "Error";
         }
         operation = "";
     }
@@ -78,13 +83,17 @@ async function clearHistory() {
         method: 'POST',
         body: formData
     });
-    
-    document.getElementById('history-list').innerHTML = "";
+
+    let historyList = document.getElementById('history-list');
+    if (historyList) {
+        historyList.innerHTML = "";
+    }
 }
 
 function updateHistory(historyString) {
-    let newEntryHTML = `<div class='history-item'>${historyString}</div>`;
     let historyList = document.getElementById('history-list');
-    // Prepend to top of the history list
+    if (!historyList) return;
+
+    let newEntryHTML = `<div class='history-item'>${historyString}</div>`;
     historyList.innerHTML = newEntryHTML + historyList.innerHTML;
 }

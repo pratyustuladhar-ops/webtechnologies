@@ -7,50 +7,57 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="layout">
-        <!-- Main Calculator Layout -->
-        <div class="main">
-            <div class="resultarea">
-                <div id="result"></div>
-            </div>
-            <div class="button">
-                <button onclick="appender('7')">7</button>
-                <button onclick="appender('8')">8</button>
-                <button onclick="appender('9')">9</button>
-                <button onclick="appender('+')" style="background: #ff9f0a;">+</button>
-                <button onclick="appender('4')">4</button>
-                <button onclick="appender('5')">5</button>
-                <button onclick="appender('6')">6</button>
-                <button onclick="appender('-')" style="background: #ff9f0a;">-</button>
-                <button onclick="appender('1')">1</button>
-                <button onclick="appender('2')">2</button>
-                <button onclick="appender('3')">3</button>
-                <button onclick="appender('*')" style="background: #ff9f0a;">&#215;</button>
-                <button id="clear" onclick="resclear()">C</button>
-                <button onclick="appender('0')">0</button>
-                <button onclick="appender('.')">.</button>
-                <button onclick="appender('/')" style="background: #ff9f0a;">&divide;</button>
-                <button class="span-two" onclick="calculate()" style="background: #ff9f0a;">=</button>
+    <div class="calculator-layout">
+        <div class="calculator-shell">
+            <div class="calculator-card">
+                <div class="display" id="result">0</div>
+                <div class="buttons">
+                    <button class="btn function" onclick="clearAll()">AC</button>
+                    <button class="btn function" onclick="clearEntry()">C</button>
+                    <button class="btn function" onclick="appender('%')">%</button>
+                    <button class="btn operator" onclick="appender('/')">÷</button>
+
+                    <button class="btn number" onclick="appender('7')">7</button>
+                    <button class="btn number" onclick="appender('8')">8</button>
+                    <button class="btn number" onclick="appender('9')">9</button>
+                    <button class="btn operator" onclick="appender('*')">×</button>
+
+                    <button class="btn number" onclick="appender('4')">4</button>
+                    <button class="btn number" onclick="appender('5')">5</button>
+                    <button class="btn number" onclick="appender('6')">6</button>
+                    <button class="btn operator" onclick="appender('-')">−</button>
+
+                    <button class="btn number" onclick="appender('1')">1</button>
+                    <button class="btn number" onclick="appender('2')">2</button>
+                    <button class="btn number" onclick="appender('3')">3</button>
+                    <button class="btn operator" onclick="appender('+')">+</button>
+
+                    <button class="btn number double" onclick="appender('00')">00</button>
+                    <button class="btn number" onclick="appender('0')">0</button>
+                    <button class="btn number" onclick="appender('.')">.</button>
+                    <button class="btn equals" onclick="calculate()">=</button>
+                </div>
             </div>
         </div>
 
-        <!-- History Display Area -->
-        <div class="history-panel">
-            <h2>Calculation History</h2>
+        <div class="history-card">
+            <div class="history-header">
+                <h2>Calculation History</h2>
+                <button class="history-clear" onclick="clearHistory()">Clear</button>
+            </div>
             <div id="history-list">
                 <?php
-                if(file_exists('history.txt')) {
+                if (file_exists('history.txt')) {
                     $history = file('history.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-                    foreach(array_reverse($history) as $line) {
+                    foreach (array_reverse($history) as $line) {
                         echo "<div class='history-item'>" . htmlspecialchars($line) . "</div>";
                     }
                 }
                 ?>
             </div>
-            <button onclick="clearHistory()" class="clear-btn">Clear History</button>
         </div>
     </div>
-    
+
     <script src="script.js" defer></script>
 </body> 
 </html>

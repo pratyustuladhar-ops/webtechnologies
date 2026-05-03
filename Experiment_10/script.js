@@ -1,28 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // We grab the form when the page completely loads
-    var form = document.getElementById('guestbookForm');
-    
-    form.addEventListener('submit', function(event) {
-        var nameInput = document.getElementById('guest_name').value.trim();
-        var messageInput = document.getElementById('guest_message').value.trim();
-        
-        // Classic Javascript Validations
-        if (nameInput.length < 2) {
-            alert("Whoops! Please enter a valid name (at least 2 characters).");
-            event.preventDefault(); // Stop form submission
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('expense-form');
+    const amountInput = document.getElementById('amount');
+    const titleInput = document.getElementById('title');
+    const dateInput = document.getElementById('date');
+
+    form.addEventListener('submit', function (event) {
+        const title = titleInput.value.trim();
+        const amount = parseFloat(amountInput.value);
+        const date = dateInput.value;
+
+        if (!title || !date || isNaN(amount) || amount <= 0) {
+            event.preventDefault();
+            alert('Please enter a valid title, positive amount, and selected date.');
             return;
-        }
-        
-        if (messageInput.length < 5) {
-            alert("Your message is too short. Please write at least 5 characters.");
-            event.preventDefault(); // Stop form submission
-            return;
-        }
-        
-        // A very classic JS pop-up confirmation
-        var confirmSubmission = confirm("Are you sure you want to post this message to the public Guestbook?");
-        if (!confirmSubmission) {
-            event.preventDefault(); // Cancel submission if they click 'Cancel'
         }
     });
 });
+
+function confirmDelete() {
+    return confirm('Are you sure you want to delete this expense?');
+}

@@ -1,95 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #eaeaea;
-    color: #333333;
-    font-family: Arial, Helvetica, sans-serif; /* Classic web-safe fonts */
     margin: 0;
-    padding: 0;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f1f5f9;
+    color: #102a43;
 }
 
-#container {
-    width: 600px;
-    margin: 50px auto;
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-    padding: 30px;
+.container {
+    max-width: 950px;
+    margin: 40px auto;
+    padding: 0 20px 40px;
 }
 
-h1 {
+header {
     text-align: center;
-    color: #1a5276;
-    border-bottom: 2px solid #2980b9;
-    padding-bottom: 10px;
+    margin-bottom: 28px;
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 2.4rem;
+}
+
+header p {
+    margin: 0;
+    color: #334e68;
+}
+
+.form-card,
+.table-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 18px 40px rgba(16, 42, 67, 0.08);
+    margin-bottom: 24px;
+}
+
+.form-card h2,
+.table-card h2 {
     margin-top: 0;
-}
-
-.subtitle {
-    text-align: center;
-    color: #666;
-    font-style: italic;
-    margin-bottom: 30px;
-}
-
-#guestbook-entries {
-    background-color: #fdfdfd;
-    border: 1px dashed #b2babb;
-    padding: 20px;
-    margin-bottom: 30px;
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-#guestbook-entries p {
-    margin: 5px 0;
-}
-
-#guestbook-entries hr {
-    border: 0;
-    border-top: 1px solid #eaeded;
-    margin: 15px 0;
-}
-
-small {
-    color: #999;
-}
-
-#form-container {
-    background-color: #f4f6f7;
-    padding: 20px;
-    border: 1px solid #d5dbdb;
-}
-
-#form-container h2 {
-    margin-top: 0;
-    color: #2c3e50;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: #0b3d91;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #243b53;
 }
 
-input[type="text"], textarea {
+input[type="text"],
+input[type="number"],
+input[type="date"] {
     width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-    border: 1px solid #bdc3c7;
-    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #d9e2ec;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+    background: #f8fafc;
+}
+
+button,
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 button {
-    background-color: #2980b9;
-    color: white;
-    border: 1px solid #1a5276;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: bold;
+    background: #0b6e99;
+    color: #ffffff;
 }
 
-button:hover {
-    background-color: #1f618d;
+button:hover,
+.button:hover {
+    opacity: 0.95;
+}
+
+.button.cancel {
+    background: #e2e8f0;
+    color: #102a43;
+}
+
+.alert {
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+}
+
+.alert.success {
+    background: #dff3e3;
+    color: #1f6f43;
+}
+
+.alert.error {
+    background: #ffe3e3;
+    color: #9b1c1c;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 680px;
+}
+
+thead {
+    background: #eef4ff;
+}
+
+th, td {
+    text-align: left;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+tbody tr:hover {
+    background: #f8fbff;
+}
+
+.action {
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.action.edit {
+    color: #1565c0;
+}
+
+.action.delete {
+    color: #b91c1c;
+}
+
+.empty-state {
+    color: #334e68;
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding: 0 14px 30px;
+    }
+
+    th, td {
+        padding: 12px 10px;
+    }
 }

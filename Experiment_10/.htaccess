@@ -1,0 +1,14 @@
+# Use index.php as the directory index.
+DirectoryIndex index.php
+
+# Don't expose .sql or .md files through the web.
+<FilesMatch "\.(sql|md)$">
+    Require all denied
+</FilesMatch>
+
+# Disable server error output for visitors.
+<IfModule mod_php.c>
+    php_flag display_errors Off
+    php_flag display_startup_errors Off
+    php_value error_reporting 0
+</IfModule>
